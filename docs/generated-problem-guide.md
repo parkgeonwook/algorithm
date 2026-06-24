@@ -51,6 +51,9 @@ Solution.java
 * 매개변수와 반환 타입은 문제에 맞게 정합니다.
 * 함수 내부에는 정답 로직을 작성하지 않습니다.
 * 기본 반환값만 넣어 컴파일 가능한 형태로 작성합니다.
+* `main` 함수를 함께 작성하여 `problem.md`의 입출력 예를 바로 실행해볼 수 있게 합니다.
+* `main` 함수에서는 콘솔 입력을 받지 않고, 테스트 케이스를 코드에 직접 작성합니다.
+* 각 테스트 케이스는 `solution` 호출 결과와 기대값을 함께 출력합니다.
 * 불필요한 `import java.util.*;`는 작성하지 않습니다.
 
 예시:
@@ -59,6 +62,18 @@ Solution.java
 package generated.회의실_배정;
 
 class Solution {
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        runTest(solution, 1, 4, new int[][]{{0, 1}, {1, 2}, {2, 3}}, 3);
+        runTest(solution, 2, 5, new int[][]{{0, 2}, {2, 4}}, 2);
+    }
+
+    private static void runTest(Solution solution, int testNumber, int n, int[][] costs, int expected) {
+        int result = solution.solution(n, costs);
+        System.out.println("[test" + testNumber + "] result: " + result + " / expected: " + expected);
+    }
+
     public int solution(int n, int[][] costs) {
         int answer = 0;
         return answer;
@@ -67,6 +82,7 @@ class Solution {
 ```
 
 문제에 따라 반환 타입이 `String`, `int[]`, `boolean`, `long` 등이 될 수 있으며, 그에 맞는 기본 반환값을 작성합니다.
+반환 타입이 배열인 경우에는 `Arrays.toString` 또는 `Arrays.deepToString`을 사용하여 결과와 기대값을 비교하기 쉽게 출력합니다.
 
 ## 문제 생성 기준
 

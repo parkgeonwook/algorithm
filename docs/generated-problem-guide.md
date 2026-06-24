@@ -6,18 +6,21 @@
 
 ## 생성 위치
 
-문제 생성 요청이 오면 `generated` 디렉터리 안에 문제 제목을 기반으로 새 디렉터리를 생성합니다.
+문제 생성 요청이 오면 원본 문제 디렉터리 안에 새 연습 문제 제목을 기반으로 하위 디렉터리를 생성합니다.
+원본 문제 디렉터리는 사용자가 언급한 문제의 실제 풀이 파일이 있는 위치를 기준으로 합니다.
 
 예시:
 
 ```text
-src/generated/
-└── 회의실_배정/
+src/programmers/kit/greedy/단속카메라/
+├── Solution.java
+└── 고속도로_임시_검문소/
     ├── problem.md
     └── Solution.java
 ```
 
-디렉터리 이름은 문제 제목을 기반으로 작성하되(기본 한글, 필요시 영어), 공백은 `_`로 변환합니다.
+새 연습 문제 디렉터리 이름은 문제 제목을 기반으로 작성하되(기본 한글, 필요시 영어), 공백은 `_`로 변환합니다.
+원본 문제 디렉터리를 명확히 찾을 수 없을 때만 사용자에게 위치를 질문합니다.
 
 ## 생성 파일
 
@@ -59,7 +62,7 @@ Solution.java
 예시:
 
 ```java
-package generated.회의실_배정;
+package programmers.kit.greedy.단속카메라.고속도로_임시_검문소;
 
 class Solution {
     public static void main(String[] args) {
